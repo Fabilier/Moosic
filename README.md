@@ -11,3 +11,10 @@ Once setup, moosic will join the designated voice channel and play songs randoml
 You can host the bot for free by following [this](https://github.com/Repulser/Moosic/wiki/Hosting-on-heroku-for-free) guide
 
 **Or host it yourself by following [this](https://github.com/Repulser/Moosic/wiki/Running-the-bot) guide.**
+
+
+## Configuration notes
+- `bot.cfg` is created on first start. `DISCORD_TOKEN`, `COMMAND_PREFIX`, `VOLUME` and `VOICE_CHANNEL_ID` environment variables override it, so the token does not have to be stored on disk.
+- `songs.txt`: one entry per line (YouTube video/playlist/mix URL or ID). Blank lines and lines starting with `#` are ignored.
+- The `!np` command needs the **Message Content** privileged intent, enabled in the Discord developer portal.
+- Requires Java 17+. Build with `./gradlew build`, the jar is in `build/libs/moosic-*.jar`.
